@@ -67,12 +67,13 @@ function question5 () {
   let eightOrMoreMaterials = [];
   for (let i = 0; i < data.length; i++) {
     if (data[i].materials.length >= 8) {
-      eightOrMoreTitle.push(data[i].title);
-      console.log(eightOrMoreTitle + " has " + data[i].materials.length + " materials.");
-    //  eightOrMoreMaterials.push(data[i].materials);
-    }
+      eightOrMoreTitle.push(data[i].title + " has " + data[i].materials.length + " materials.");
+      for (let j = 0; j < data[i].materials.length; j++) {
+        eightOrMoreTitle.push("- " + data[i].materials[j]);
+      }
+    } // end of "if" statement block
   }
-
+  console.log(eightOrMoreTitle.join('\r\n'));
 }
 
 

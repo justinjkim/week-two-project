@@ -1,4 +1,4 @@
-// Since the `data.js` file is loaded in your `index.html` before this one, 
+// Since the `data.js` file is loaded in your `index.html` before this one,
 // you have access to the `data` variable that contains the Etsy Store data.
 // Open your `index.html` page in your browser and you can verify that the following
 // is properly working. The `data` variable is an array with 25 items in it
@@ -9,6 +9,12 @@ console.log(data);
 // 1: Show me how to calculate the average price of all items.
 function question1 () {
   // Answer:
+  let total_price = 0;
+  for (let i = 0; i < data.length; i++) {
+    total_price += data[i].price;
+  }
+  let average_price = (total_price / data.length).toFixed(2);
+  console.log("The average price is " + average_price);
 }
 
 
@@ -16,6 +22,13 @@ function question1 () {
 // 2: Show me how to get an array of items that cost between $14.00 and $18.00 USD
 function question2 () {
   // Answer:
+  let $$ = [];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].price <= 18 && data[i].price >= 14) {
+      $$.push(data[i].title);
+    }
+  }
+  console.log($$);
 }
 
 
@@ -32,7 +45,7 @@ function question4 () {
 }
 
 
-// 5: Which items are made of eight or more materials? 
+// 5: Which items are made of eight or more materials?
 //    Display the name, number of items and the items it is made of.
 function question5 () {
   // Answer:

@@ -14,7 +14,7 @@ function question1 () {
     total_price += data[i].price;
   }
   let average_price = (total_price / data.length).toFixed(2);
-  console.log("The average price is " + average_price);
+  console.log("The average price is $" + average_price);
 }
 
 
@@ -63,17 +63,16 @@ function question4 () {
 //    Display the name, number of items and the items it is made of.
 function question5 () {
   // Answer:
-  let eightOrMoreTitle = [];
-  let eightOrMoreMaterials = [];
+  let eightOrMore = []; // you actually just need one array to make the join.(''\r\n') work
   for (let i = 0; i < data.length; i++) {
     if (data[i].materials.length >= 8) {
-      eightOrMoreTitle.push(data[i].title + " has " + data[i].materials.length + " materials.");
+      eightOrMore.push(data[i].title + " has " + data[i].materials.length + " materials.");
       for (let j = 0; j < data[i].materials.length; j++) {
-        eightOrMoreTitle.push("- " + data[i].materials[j]);
+        eightOrMore.push("- " + data[i].materials[j]);
       }
     } // end of "if" statement block
   }
-  console.log(eightOrMoreTitle.join('\r\n'));
+  console.log(eightOrMore.join('\r\n'));
 }
 
 

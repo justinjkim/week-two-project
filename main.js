@@ -63,6 +63,16 @@ function question4 () {
 //    Display the name, number of items and the items it is made of.
 function question5 () {
   // Answer:
+  let eightOrMoreTitle = [];
+  let eightOrMoreMaterials = [];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].materials.length >= 8) {
+      eightOrMoreTitle.push(data[i].title);
+      console.log(eightOrMoreTitle + " has " + data[i].materials.length + " materials.");
+    //  eightOrMoreMaterials.push(data[i].materials);
+    }
+  }
+
 }
 
 
@@ -70,4 +80,11 @@ function question5 () {
 // Answer:
 function question6 () {
   // Answer:
+  let selfMade = [];
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].who_made === "i_did") {
+      selfMade.push(data[i]);
+    }
+  }
+  console.log(selfMade.length + " items were made by their sellers.");
 }
